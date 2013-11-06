@@ -44,8 +44,8 @@ class FragmentsController < ApplicationController
     respond_to do |format|
       if @fragment.update(fragment_params)
         format.html { redirect_to fragments_url, notice: 'Fragment was successfully updated.' }
-        format.json { respond_with_bip(@fragment) }
-        #format.json { head :no_content }
+        #format.json { respond_with_bip(@fragment) }
+        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @fragment.errors, status: :unprocessable_entity }
