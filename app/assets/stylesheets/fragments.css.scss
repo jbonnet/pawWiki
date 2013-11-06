@@ -1,8 +1,16 @@
 // Place all the styles related to the fragments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#content {
-  width: 700px ;
+#fragments {
+  width: 900px ;
   margin-left: auto ;
   margin-right: auto ;
+}
+
+.fragment {
+  margin: 2px;
+  padding: 4px;
+  border: lightgrey 1px solid;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
