@@ -1,12 +1,12 @@
 <div id="fragments">
   <p id="flash"><%= notice %></p>
-  <%= link_to 'New Fragment', "#", id: "new-fragment-link" %><!-- new_fragment_path -->
+  <%= link_to raw('<i class="icon-plus-sign"></i>'), "#", id: "new-fragment-link" %><!-- new_fragment_path -->
   <%= render "fragments/form" %>
   <br>
   <% @fragments.each do |fragment| %>
     <div class="fragment">
       <div>
-        <%= link_to 'Edit', edit_fragment_path(fragment) %> | 
+        <%= link_to raw('<i class="icon-edit"></i>'), edit_fragment_path(fragment) %> | 
         <%= link_to 'Destroy', fragment, method: :delete, data: { confirm: 'Are you sure you want to delete fragment entitled '+ truncate(fragment.title, length: 60, separator: ' ') +'?' } %>
       </div>
       <h2><%= link_to truncate(fragment.title, length: 60, separator: ' '), fragment %></h2>
