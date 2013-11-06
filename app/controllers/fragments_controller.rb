@@ -4,7 +4,8 @@ class FragmentsController < ApplicationController
   # GET /fragments
   # GET /fragments.json
   def index
-    @fragments = Fragment.all
+    @fragments = Fragment.order('updated_at DESC')
+    @fragment = Fragment.new
   end
 
   # GET /fragments/1
@@ -28,7 +29,7 @@ class FragmentsController < ApplicationController
 
     respond_to do |format|
       if @fragment.save
-        format.html { redirect_to @fragment, notice: 'Fragment was successfully created.' }
+        format.html { redirect_to fragments_url, notice: 'Fragment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @fragment }
       else
         format.html { render action: 'new' }
@@ -42,8 +43,9 @@ class FragmentsController < ApplicationController
   def update
     respond_to do |format|
       if @fragment.update(fragment_params)
-        format.html { redirect_to @fragment, notice: 'Fragment was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to fragments_url, notice: 'Fragment was successfully updated.' }
+        format.json { respond_with_bip(@fragment) }
+        #format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @fragment.errors, status: :unprocessable_entity }

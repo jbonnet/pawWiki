@@ -47,6 +47,9 @@ gem 'bootstrap-sass', '~> 2.3.2.2'
 gem 'figaro'
 gem 'thin'
 
+gem 'RedCloth', :require => 'redcloth'
+gem 'best_in_place'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
