@@ -1,0 +1,10 @@
+<% @fragments.each do |fragment| %>
+  <div class="fragment">
+    <div>
+      <%= link_to raw('<i class="icon-edit"></i>'), edit_fragment_path(fragment) %> | 
+      <%= link_to 'Destroy', fragment, method: :delete, data: { confirm: 'Are you sure you want to delete fragment entitled '+ truncate(fragment.title, length: 60, separator: ' ') +'?' } %>
+    </div>
+    <h2><%= link_to truncate(fragment.title, length: 60, separator: ' '), fragment %></h2>
+    <%= RedCloth.new(fragment.content).to_html.html_safe %> 
+  </div>
+<% end %>

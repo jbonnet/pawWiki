@@ -4,10 +4,16 @@ class FragmentsController < ApplicationController
   # GET /fragments
   # GET /fragments.json
   def index
-    @fragments = Fragment.order('updated_at DESC')
+    @fragments = Fragment.order('updated_at DESC').paginate(:page => params[:page])
     @fragment = Fragment.new
-  end
 
+    respond_to do |format|
+      format.html
+      format.js # add this line for your js template
+      format.json { render json: @fragments }
+    end
+  end
+        
   # GET /fragments/1
   # GET /fragments/1.json
   def show
@@ -44,7 +50,6 @@ class FragmentsController < ApplicationController
     respond_to do |format|
       if @fragment.update(fragment_params)
         format.html { redirect_to fragments_url, notice: 'Fragment was successfully updated.' }
-        #format.json { respond_with_bip(@fragment) }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

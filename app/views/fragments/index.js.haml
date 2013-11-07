@@ -1,0 +1,5 @@
+$('#fragments').append('#{escape_javascript(render :partial => "fragments/fragments", :locals => { fragments: @fragments })}');
+$('a.load-more-fragments').attr('href', '#{fragments_path :page => @fragments.next_page}');
+
+- unless @fragments.next_page
+  $('a.load-more-fragments').remove();

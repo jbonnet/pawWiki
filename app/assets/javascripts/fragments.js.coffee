@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $("#fragment-form").hide()
+  $('a.load-more-fragments').on 'inview', (e, visible) ->
+    return unless visible
+    $.getScript $(this).attr('href')
 $("#new-fragment-link").click ->
   $("#fragment-form").show()
   return false

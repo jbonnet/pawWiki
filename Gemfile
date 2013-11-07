@@ -48,7 +48,8 @@ gem 'figaro'
 gem 'thin'
 
 gem 'RedCloth', :require => 'redcloth'
-gem 'best_in_place'
+gem 'will_paginate', '~> 3.0'
+gem 'haml', '~> 4.0.3'
 
 group :development do
   gem 'better_errors'
