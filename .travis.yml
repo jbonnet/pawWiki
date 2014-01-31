@@ -1,0 +1,9 @@
+language: ruby
+rvm: 2.0.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: ba6XnanuPwkn8Pb3qvYRG0IOBIlulzLJH/vWi5lFcn3+rHzV/3sb8tDDxlU9U9hTLvrFXP0SUrI+XO6pZ7BRXs0J+4aU1e4rsjo0Ra07YiM7tJdXH0XpmC5t+IH48tE8dlS88iH+CQ0H4dMhUHR1oGJRAcUnofNJTzRh2f+4AG4=
+  app: dry-earth-1054
+  on:
+    repo: jbonnet/pawWiki
