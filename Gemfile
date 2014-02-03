@@ -47,6 +47,8 @@ gem 'bootstrap-sass', '~> 2.3.2.2'
 gem 'figaro'
 gem 'thin'
 
+gem 'ffi'
+
 gem 'RedCloth', :require => 'redcloth'
 gem 'will_paginate', '~> 3.0'
 gem 'haml', '~> 4.0.3'

@@ -1,6 +1,6 @@
 == README
 
-https://www.codeship.io/projects/453851a0-6a62-0131-03a8-2e93b08d6e8d/status
+[![Build Status](https://www.codeship.io/projects/453851a0-6a62-0131-03a8-2e93b08d6e8d/status)](shttps://travis-ci.org/segmentio/analytics.js.png?branch=master)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
